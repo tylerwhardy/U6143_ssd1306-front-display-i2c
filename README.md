@@ -15,6 +15,16 @@ cd U6143_SSD1306/C
 
 make 
 
+chmod +x display
+
 # Validate the display comes on 
 sudo ./display 
 
+# Install front-display.service where it belongs in /etc/systemd/system/
+sudo mv front-display.service /etc/systemd/system/front-display.service
+
+# Enable service
+systemctl enable front-display.service
+
+# Reboot into service
+sudo reboot
