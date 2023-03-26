@@ -11,7 +11,7 @@ sudo apt install python3-lgpio make gcc
 git clone https://github.com/UCTRONICS/U6143_ssd1306.git
 
 # Make vendor drivers
-cd U6143_SSD1306/C 
+cd /home/ubuntu/U6143_ssd1306/C
 
 make 
 
