@@ -1,0 +1,22 @@
+# Place this here: 
+# /etc/systemd/system/front-display.service                                                             
+
+[Unit]
+Description=FrontDisplay
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/U6143_ssd1306/C/
+ExecStart=/home/ubuntu/U6143_ssd1306/C/display
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=FrontDisplay
+User=root
+Group=root
+Environment=PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/home/ubuntu
+
+[Install]
+WantedBy=multi-user.target
